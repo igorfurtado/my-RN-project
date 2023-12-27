@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "clean-ios-cache": "sh scripts/clean-ios-cache.sh"
   },
   "dependencies": {
     "react": "18.2.0",
