@@ -19,18 +19,23 @@ function App(): React.JSX.Element {
   }
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={[backgroundStyle, styles.container]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView style={backgroundStyle}>
-        <View>
+      <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+        <View style={[styles.sectionContainer]}>
           <Text
-            style={[
-              styles.sectionContainer,
-              { color: isDarkMode ? Colors.white : Colors.black }
-            ]}
+            selectable
+            maxFontSizeMultiplier={2}
+            ellipsizeMode='tail'
+            allowFontScaling={true}
+            numberOfLines={1}
+            style={{
+              color: isDarkMode ? Colors.white : Colors.black,
+              textAlign: 'center'
+            }}
           >
             Hello world!
           </Text>
@@ -41,8 +46,15 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+  scrollViewContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   sectionContainer: {
-    marginTop: 32,
     paddingHorizontal: 24
   }
 })
