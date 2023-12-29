@@ -28,9 +28,7 @@ function App(): React.JSX.Element {
         <View style={[styles.sectionContainer]}>
           <Text
             selectable
-            maxFontSizeMultiplier={2}
-            ellipsizeMode='tail'
-            allowFontScaling={true}
+            allowFontScaling={false}
             numberOfLines={1}
             style={{
               color: isDarkMode ? Colors.white : Colors.black,
