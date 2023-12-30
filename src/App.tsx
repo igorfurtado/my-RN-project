@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 
 import { Colors } from 'react-native/Libraries/NewAppScreen'
-import { statusBarHeight } from './src/utils/status-bar-height'
+import { statusBarHeight } from './utils/status-bar-height'
 
 const App = (): JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark'
