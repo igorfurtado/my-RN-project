@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   SafeAreaView,
   ScrollView,
@@ -11,7 +10,7 @@ import {
 
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 
-function App(): React.JSX.Element {
+const App = (): JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark'
 
   const backgroundStyle = {
@@ -23,6 +22,7 @@ function App(): React.JSX.Element {
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
+        animated
       />
       <ScrollView contentContainerStyle={styles.scrollViewContainer}>
         <View style={[styles.sectionContainer]}>
