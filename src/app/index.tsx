@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, StatusBar, View } from 'react-native'
+import { SafeAreaView, StatusBar, TextInput, View } from 'react-native'
 
 import Button from 'src/components/button'
 import useAppStyles from './styles/use-styles'
@@ -14,11 +14,21 @@ const App = (): JSX.Element => {
         animated
         translucent
       />
-      <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-        <View style={[styles.sectionContainer]}>
-          <Button title='Meu Botão' />
-        </View>
-      </ScrollView>
+      <View style={[styles.sectionContainer]}>
+        <TextInput
+          style={styles.input}
+          placeholder='E-mail'
+          placeholderTextColor='#aaa'
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder='Senha'
+          placeholderTextColor='#aaa'
+          secureTextEntry
+        />
+        <Button title='Meu Botão' />
+      </View>
     </SafeAreaView>
   )
 }

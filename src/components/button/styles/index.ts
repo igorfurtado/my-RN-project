@@ -3,7 +3,8 @@ import { Platform, StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   buttonWrapper: {
     overflow: 'hidden',
-    borderRadius: 8
+    borderRadius: 8,
+    width: '100%'
   },
   button: {
     backgroundColor: '#222',

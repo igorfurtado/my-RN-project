@@ -15,15 +15,21 @@ const useAppStyles = () => {
       backgroundColor: backgroundStyle.backgroundColor,
       marginTop: androidSafeMarginTop
     },
-    scrollViewContainer: {
+    sectionContainer: {
       flexGrow: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      padding: 24
+      paddingHorizontal: 28,
+      gap: 16
     },
-    sectionContainer: {
-      paddingHorizontal: 8,
-      width: '100%'
+    input: {
+      width: '100%',
+      borderWidth: 1,
+      borderColor: '#888',
+      borderRadius: 8,
+      height: 48,
+      paddingHorizontal: 16,
+      color: '#333'
     }
   })
 
