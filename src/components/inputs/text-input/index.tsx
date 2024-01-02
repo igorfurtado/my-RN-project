@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Ref, forwardRef, useState } from 'react'
 import { TextInput, TextInputProps } from 'react-native'
 import { styles } from './styles'
 
@@ -7,25 +7,26 @@ type InputTextProps = {
   disabled?: boolean
 } & TextInputProps
 
-const InputText = ({
-  isPassword = false,
-  disabled = false,
+const InputText = forwardRef(
+  (
+    { isPassword = false, disabled = false, ...props }: InputTextProps,
+    ref: Ref<TextInput>
+  ) => {
+    const [isFocused, setIsFocused] = useState<boolean>(false)
 
-  ...props
-}: InputTextProps) => {
-  const [isFocused, setIsFocused] = useState<boolean>(false)
-
-  return (
-    <TextInput
-      style={[styles.input, isFocused && styles.inputFocused]}
-      placeholderTextColor='#aaa'
-      secureTextEntry={isPassword}
-      editable={!disabled}
-      onFocus={() => setIsFocused(true)}
-      onBlur={() => setIsFocused(false)}
-      {...props}
-    />
-  )
-}
+    return (
+      <TextInput
+        ref={ref}
+        style={[styles.input, isFocused && styles.inputFocused]}
+        placeholderTextColor='#aaa'
+        secureTextEntry={isPassword}
+        editable={!disabled}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        {...props}
+      />
+    )
+  }
+)
 
 export default InputText

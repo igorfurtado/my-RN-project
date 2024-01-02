@@ -1,11 +1,13 @@
-import { SafeAreaView, StatusBar, View } from 'react-native'
+import { SafeAreaView, StatusBar, TextInput, View } from 'react-native'
 
+import { useRef } from 'react'
 import Button from 'src/components/button'
 import InputText from 'src/components/inputs/text-input'
 import useAppStyles from './styles/use-styles'
 
 const App = (): JSX.Element => {
   const { styles, backgroundStyle, isDarkMode } = useAppStyles()
+  const passwordInputRef = useRef<TextInput>(null)
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,9 +25,16 @@ const App = (): JSX.Element => {
           autoCapitalize='none'
           autoCorrect={false}
           autoComplete='email'
+          returnKeyType='next'
+          onSubmitEditing={() => passwordInputRef?.current?.focus()}
         />
-        <InputText placeholder='Senha' isPassword />
-        <Button title='Meu Botão' />
+        <InputText
+          ref={passwordInputRef}
+          placeholder='Senha'
+          isPassword
+          returnKeyType='done'
+        />
+        <Button title='Entrar' />
       </View>
     </SafeAreaView>
   )
