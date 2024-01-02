@@ -18,14 +18,12 @@ const useAppStyles = () => {
     scrollViewContainer: {
       flexGrow: 1,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
+      padding: 24
     },
     sectionContainer: {
-      paddingHorizontal: 24
-    },
-    text: {
-      color: isDarkMode ? Colors.white : Colors.black,
-      textAlign: 'center'
+      paddingHorizontal: 8,
+      width: '100%'
     }
   })
 
