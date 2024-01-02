@@ -1,6 +1,7 @@
-import { SafeAreaView, StatusBar, TextInput, View } from 'react-native'
+import { SafeAreaView, StatusBar, View } from 'react-native'
 
 import Button from 'src/components/button'
+import InputText from 'src/components/inputs/text-input'
 import useAppStyles from './styles/use-styles'
 
 const App = (): JSX.Element => {
@@ -15,18 +16,15 @@ const App = (): JSX.Element => {
         translucent
       />
       <View style={[styles.sectionContainer]}>
-        <TextInput
-          style={styles.input}
+        <InputText
           placeholder='E-mail'
-          placeholderTextColor='#aaa'
+          autoFocus
+          keyboardType='email-address'
+          autoCapitalize='none'
+          autoCorrect={false}
+          autoComplete='email'
         />
-
-        <TextInput
-          style={styles.input}
-          placeholder='Senha'
-          placeholderTextColor='#aaa'
-          secureTextEntry
-        />
+        <InputText placeholder='Senha' isPassword />
         <Button title='Meu Botão' />
       </View>
     </SafeAreaView>

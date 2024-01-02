@@ -21,15 +21,6 @@ const useAppStyles = () => {
       alignItems: 'center',
       paddingHorizontal: 28,
       gap: 16
-    },
-    input: {
-      width: '100%',
-      borderWidth: 1,
-      borderColor: '#888',
-      borderRadius: 8,
-      height: 48,
-      paddingHorizontal: 16,
-      color: '#333'
     }
   })
 
